@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Event</title>
+        <link rel="stylesheet" href="stylefonts.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styleico.css">
+        <!--Шрифты Google Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet"> 
+        <!--Шрифты fontawesome-->
+        <script src="https://use.fontawesome.com/e31e66425c.js"></script>
+        <!--jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--Air Datepicker-->
+        <link href="datepicker.min.css" rel="stylesheet" type="text/css">
+        <script src="datepicker.min.js"></script>
+        <!--Googlemaps-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcsAPF-IUwR10j_bT3I5mP5Yx2_qgw9FU&language=en&region=RO"></script>
+        <!--Destination on maps-->
+<!--        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry"></script>-->
+        
+        <script src="script.js"></script>
+    </head>
+    <img src="images/marker.png" alt="">
+    <body>
+        
+        <header class="header">
+        <div class="container header__container">
+           <div class="header__body">
+               <div class="header__left">
+                   <div class="header__logo"><a href="index.html">ste<span>.</span>am</a></div>
+                  <div>
+                   <div class="header__burger burger-menu__burger">
+                        <span class="burger-menu__line burger-menu__line_1"></span>
+                        <span class="burger-menu__line burger-menu__line_2"></span>
+                        <span class="burger-menu__line burger-menu__line_3"></span>
+                        <span class="burger-menu__line burger-menu__line_4"></span>
+                    </div>
+                    <nav class="header__menu">
+                        <ul class="header__list">
+                            <li><a href="" class="active header__link" >Home</a></li>
+                            <li><a href="" class="header__link">Get&nbsp;Started</a></li>
+                            <li><a href="" class="header__link">How&nbsp;it&nbsp;works</a></li>
+                            <li><a href="" class="header__link">Pricing</a></li>
+                            <li><a href="" class="header__link">Support</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                </div>    
+                    <div class="header__btns">
+                        <a href="" class="btn btn_left">Login / Signup</a>
+                        <a href="" class="btn active-btn">Get&nbsp;Listed&nbsp;Today</a>
+                    </div>
+            </div>
+            
+        </div>
+        </header>
+        
+        <section class="name">
+        <div class="container">  
+           <h1 class="name__title">Find the <span>next event</span> you'll want <span>to attend</span>.</h1>
+        </div>
+        </section>
+        
+        <section class="map-cont">
+           
+            <div id="map">
+                
+            </div>
+            <div class="map__control">
+                <div class="map__zoom">
+                    <div class="map__zoom-btn map__zoom-btn_plus">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </div>
+                    
+                    <hr/>
+                    
+                    <div class="map__zoom-btn map__zoom-btn_minus">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+
+                <div class="map__desc">
+                    <p class="map__amount">9657</p>
+                    <p class="map__text">Global Live Events</p>
+                </div>
+            </div>
+        </section>
+        
+
+<!--
+            <div class="cards__item cards__item_sm">
+                <div class="cards__header">
+                    <div class="cards__pic">
+                        <img src="images/card1min.png" alt="">     
+                    </div>      
+                </div>
+                <div class="cards__body cards__body_sm">
+                    <h2 class="cards__title cards__title_sm">Act Big! Ultimate Music  Festival</h2>
+                    <p class="cards__top-address">Pattichion Municipal Amphitheater</p>
+                    <p class="cards__bottom-address cards__bottom-address_sm">Nikolaou G. Dimitriou Street , Larnaca, 6031, Cyprus</p>
+                </div>
+            </div>
+-->
+        
+        
+        
+        <section class="sorting">
+        <div class="container">
+            <div class="sorting__body">
+                <div class="sorting__btns">
+                    <button id="hot" class="sorting__btn sorting__btn_active">Hot Events</button>
+                    <button id="trend" class="sorting__btn">Trending Events</button>
+                </div>
+                <div class="sorting__search-cont">
+                    <form class="search" action="" method="get">
+                        <input class="search__row sorting__event-search" name="search" placeholder="Event" type="search">
+                        <div class="test">
+                        <div class="sorting__location-cont">
+                            <input class="search__row sorting__location-search" name="search"placeholder="Your location" type="search">
+                            <button class="search__btn" type="submit"></button>
+                        </div>
+                        <div class="calendar">
+                            <img src="images/calendar.png" alt="">
+                        </div>
+                        <input type='text' id="sorting__datepicker" class="datepicker-here"> 
+                        </div>  
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+        <section class="cards">
+        <div class="container">
+        <div class="cards__grid">
+<!--
+            <article class="cards__item">
+                <div class="cards__header">
+                    <div class="cards__pic">
+                        <img src="images/card1min.png" alt="">
+                             
+                    </div>
+                    <div class="cards__row">
+                        <div class="cards__row-cont">
+                            <div class="cards__social">
+                               <img src="images/facebook.png" alt="">
+                            </div>
+                            <p class="cards__date">Aug 17, 2013  02:00pm - 08:00pm IST</p>
+                            <div class="cards__like">
+
+                            <svg class="cards__heart" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 37 33" style="enable-background:new 0 0 37 33;" xml:space="preserve">
+                            <g>
+                            <path class="st0" d="M18.5,28.9c-0.3,0-0.6-0.1-0.8-0.3C5.8,21.7,5.3,15,5.3,13.5c0,0,0,0,0-0.1c0-4.2,3.4-7.6,7.7-7.6
+                                c2.1,0,4.1,0.8,5.5,2.3c1.4-1.5,3.4-2.3,5.5-2.3c4.2,0,7.6,3.4,7.7,7.6c0,1-0.1,8.1-12.3,15.2c-0.1,0.1-0.2,0.1-0.4,0.2
+                                c0,0,0,0,0,0C18.8,28.9,18.6,28.9,18.5,28.9z" fill="#fe2232"/>
+                            <path d="M24,7.4c3.4,0,6.2,2.7,6.2,6.1c0,0,0.7,6.8-11.7,13.9l0,0c0,0,0,0,0,0c0,0,0,0,0,0v0C6.8,20.6,6.8,14.2,6.8,13.5
+                                c0,0,0,0,0-0.1c0-3.4,2.8-6.1,6.2-6.1c2.4,0,4.5,1.4,5.5,3.4C19.5,8.7,21.6,7.4,24,7.4 M24,4.4c-2,0-3.9,0.7-5.5,1.8
+                                C16.9,5,15,4.4,13,4.4c-5.1,0-9.2,4.1-9.2,9.1c0,0,0,0.1,0,0.1c0,1.8,0.7,9.2,13.1,16.4c0,0,0,0,0,0c0.3,0.2,0.6,0.3,1,0.4
+                                c0.2,0,0.4,0.1,0.6,0.1c0.3,0,0.5,0,0.8-0.1c0.3-0.1,0.6-0.2,0.8-0.4c12.8-7.4,13.1-15,13-16.5C33.1,8.4,29,4.4,24,4.4L24,4.4z" fill="#454237"/>
+                            </g>    
+                            </svg>   
+                            </div>
+                        </div>
+                    </div>     
+                       
+                </div>
+                <div class="cards__body">
+                    <h2 class="cards__title">Act Big! Ultimate Music  Festival</h2>
+                    <p class="cards__top-address">Pattichion Municipal Amphitheater</p>
+                    <p class="cards__bottom-address">Nikolaou G. Dimitriou Street , Larnaca, 6031, Cyprus</p>
+                    <p class="cards__desc">An evening of bowling by geeks for geeks. Nothing more, nothing less (adorn bowling shirts — funny shoes provided) Follow @TeamLebowski or #Geek&shy;Bowling on Twitter for up to the minute news Bowling on Twitter for up to the minute news...</p>
+                </div>
+                <div class="cards__footer footer-cards">
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/man2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">13<span>%</span></p>
+                            <p class="footer-cards__gender">male</p>
+                        </div>
+                   </div>
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/woman2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">87<span>%</span></p>
+                            <p class="footer-cards__gender">female</p>
+                        </div>
+                   </div>
+                    
+                </div>
+            </article>
+            
+            
+            <article class="cards__item">
+                <div class="cards__header">
+                    <div class="cards__pic">
+                        <img src="images/card2.png" alt="">     
+                    </div>
+                    <div class="cards__row">
+                        <div class="cards__row-cont">
+                            <div class="cards__social">
+                               <img src="images/socE.png" alt="">
+                            </div>
+                            <p class="cards__date">Aug 17, 2013  02:00pm - 08:00pm IST</p>
+                            <div class="cards__like">
+
+                            <svg class="cards__heart" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 37 33" style="enable-background:new 0 0 37 33;" xml:space="preserve">
+                            <g>
+                            <path class="st0" d="M18.5,28.9c-0.3,0-0.6-0.1-0.8-0.3C5.8,21.7,5.3,15,5.3,13.5c0,0,0,0,0-0.1c0-4.2,3.4-7.6,7.7-7.6
+                                c2.1,0,4.1,0.8,5.5,2.3c1.4-1.5,3.4-2.3,5.5-2.3c4.2,0,7.6,3.4,7.7,7.6c0,1-0.1,8.1-12.3,15.2c-0.1,0.1-0.2,0.1-0.4,0.2
+                                c0,0,0,0,0,0C18.8,28.9,18.6,28.9,18.5,28.9z" fill="#fe2232"/>
+                            <path d="M24,7.4c3.4,0,6.2,2.7,6.2,6.1c0,0,0.7,6.8-11.7,13.9l0,0c0,0,0,0,0,0c0,0,0,0,0,0v0C6.8,20.6,6.8,14.2,6.8,13.5
+                                c0,0,0,0,0-0.1c0-3.4,2.8-6.1,6.2-6.1c2.4,0,4.5,1.4,5.5,3.4C19.5,8.7,21.6,7.4,24,7.4 M24,4.4c-2,0-3.9,0.7-5.5,1.8
+                                C16.9,5,15,4.4,13,4.4c-5.1,0-9.2,4.1-9.2,9.1c0,0,0,0.1,0,0.1c0,1.8,0.7,9.2,13.1,16.4c0,0,0,0,0,0c0.3,0.2,0.6,0.3,1,0.4
+                                c0.2,0,0.4,0.1,0.6,0.1c0.3,0,0.5,0,0.8-0.1c0.3-0.1,0.6-0.2,0.8-0.4c12.8-7.4,13.1-15,13-16.5C33.1,8.4,29,4.4,24,4.4L24,4.4z" fill="#454237"/>
+                            </g>    
+                            </svg>   
+                            </div>
+                        </div>
+                    </div>     
+                       
+                </div>
+                <div class="cards__body">
+                    <h2 class="cards__title">Summer Art Club - Week 1/3</h2>
+                    <p class="cards__top-address">Fun Factory Wildeshausen</p>
+                    <p class="cards__bottom-address">Am Umspannwerk 7, Wildeshausen, 27793, Germany</p>
+                    <p class="cards__desc">Join us for creative holiday activities - this week with Ashley & Letty! Let your 8-13 year olds to join to help burn some of that pent-up creative energy on our fun artist led workshops. You can book all three days, or just one at a time</p>
+                </div>
+                <div class="cards__footer footer-cards">
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/man2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">25<span>%</span></p>
+                            <p class="footer-cards__gender">male</p>
+                        </div>
+                   </div>
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/woman2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">75<span>%</span></p>
+                            <p class="footer-cards__gender">female</p>
+                        </div>
+                   </div>
+                    
+                </div>
+            </article>
+            
+            
+            <article class="cards__item">
+                <div class="cards__header">
+                    <div class="cards__pic">
+                        <img src="images/card3.png" alt="">
+                             
+                    </div>
+                    <div class="cards__row">
+                        <div class="cards__row-cont">
+                            <div class="cards__social">
+                               <img src="images/facebook.png" alt="">
+                            </div>
+                            <p class="cards__date">Aug 17, 2013  02:00pm - 08:00pm IST</p>
+                            <div class="cards__like">
+
+                            <svg class="cards__heart" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 37 33" style="enable-background:new 0 0 37 33;" xml:space="preserve">
+                            <g>
+                            <path class="st0" d="M18.5,28.9c-0.3,0-0.6-0.1-0.8-0.3C5.8,21.7,5.3,15,5.3,13.5c0,0,0,0,0-0.1c0-4.2,3.4-7.6,7.7-7.6
+                                c2.1,0,4.1,0.8,5.5,2.3c1.4-1.5,3.4-2.3,5.5-2.3c4.2,0,7.6,3.4,7.7,7.6c0,1-0.1,8.1-12.3,15.2c-0.1,0.1-0.2,0.1-0.4,0.2
+                                c0,0,0,0,0,0C18.8,28.9,18.6,28.9,18.5,28.9z" fill="#fe2232"/>
+                            <path d="M24,7.4c3.4,0,6.2,2.7,6.2,6.1c0,0,0.7,6.8-11.7,13.9l0,0c0,0,0,0,0,0c0,0,0,0,0,0v0C6.8,20.6,6.8,14.2,6.8,13.5
+                                c0,0,0,0,0-0.1c0-3.4,2.8-6.1,6.2-6.1c2.4,0,4.5,1.4,5.5,3.4C19.5,8.7,21.6,7.4,24,7.4 M24,4.4c-2,0-3.9,0.7-5.5,1.8
+                                C16.9,5,15,4.4,13,4.4c-5.1,0-9.2,4.1-9.2,9.1c0,0,0,0.1,0,0.1c0,1.8,0.7,9.2,13.1,16.4c0,0,0,0,0,0c0.3,0.2,0.6,0.3,1,0.4
+                                c0.2,0,0.4,0.1,0.6,0.1c0.3,0,0.5,0,0.8-0.1c0.3-0.1,0.6-0.2,0.8-0.4c12.8-7.4,13.1-15,13-16.5C33.1,8.4,29,4.4,24,4.4L24,4.4z" fill="#454237"/>
+                            </g>    
+                            </svg>   
+                            </div>
+                        </div>
+                    </div>     
+                       
+                </div>
+                <div class="cards__body">
+                    <h2 class="cards__title">Bocca Foodbar @ Vama  Veche</h2>
+                    <p class="cards__top-address">Pattichion Municipal Amphitheater</p>
+                    <p class="cards__bottom-address">Nikolaou G. Dimitriou Street , Larnaca, 6031, Cyprus</p>
+                    <p class="cards__desc">ERLEBT 3 TAGE LANG STRANDFEELING & PARTYSPAß PUR! BEACH PARTY OPENING WIR ERÖFFNEN DIE PARTYSAISON! Seid Ihr bereit für die heißeste Beachparty des Jahres</p>
+                </div>
+                <div class="cards__footer footer-cards">
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/man2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">62<span>%</span></p>
+                            <p class="footer-cards__gender">male</p>
+                        </div>
+                   </div>
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/woman2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">38<span>%</span></p>
+                            <p class="footer-cards__gender">female</p>
+                        </div>
+                   </div>
+                    
+                </div>
+            </article>
+            
+            
+            <article class="cards__item">
+                <div class="cards__header">
+                    <div class="cards__pic">
+                        <img src="images/card4.png" alt="">
+                             
+                    </div>
+                    <div class="cards__row">
+                        <div class="cards__row-cont">
+                            <div class="cards__social">
+                               <img src="images/socE.png" alt="">
+                            </div>
+                            <p class="cards__date">Aug 17, 2013  02:00pm - 08:00pm IST</p>
+                            <div class="cards__like">
+
+                            <svg class="cards__heart" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 37 33" style="enable-background:new 0 0 37 33;" xml:space="preserve">
+                            <g>
+                            <path class="st0" d="M18.5,28.9c-0.3,0-0.6-0.1-0.8-0.3C5.8,21.7,5.3,15,5.3,13.5c0,0,0,0,0-0.1c0-4.2,3.4-7.6,7.7-7.6
+                                c2.1,0,4.1,0.8,5.5,2.3c1.4-1.5,3.4-2.3,5.5-2.3c4.2,0,7.6,3.4,7.7,7.6c0,1-0.1,8.1-12.3,15.2c-0.1,0.1-0.2,0.1-0.4,0.2
+                                c0,0,0,0,0,0C18.8,28.9,18.6,28.9,18.5,28.9z" fill="#fe2232"/>
+                            <path d="M24,7.4c3.4,0,6.2,2.7,6.2,6.1c0,0,0.7,6.8-11.7,13.9l0,0c0,0,0,0,0,0c0,0,0,0,0,0v0C6.8,20.6,6.8,14.2,6.8,13.5
+                                c0,0,0,0,0-0.1c0-3.4,2.8-6.1,6.2-6.1c2.4,0,4.5,1.4,5.5,3.4C19.5,8.7,21.6,7.4,24,7.4 M24,4.4c-2,0-3.9,0.7-5.5,1.8
+                                C16.9,5,15,4.4,13,4.4c-5.1,0-9.2,4.1-9.2,9.1c0,0,0,0.1,0,0.1c0,1.8,0.7,9.2,13.1,16.4c0,0,0,0,0,0c0.3,0.2,0.6,0.3,1,0.4
+                                c0.2,0,0.4,0.1,0.6,0.1c0.3,0,0.5,0,0.8-0.1c0.3-0.1,0.6-0.2,0.8-0.4c12.8-7.4,13.1-15,13-16.5C33.1,8.4,29,4.4,24,4.4L24,4.4z" fill="#454237"/>
+                            </g>    
+                            </svg>   
+                            </div>
+                        </div>
+                    </div>     
+                       
+                </div>
+                <div class="cards__body">
+                    <h2 class="cards__title">Faringdon Community Sports  College - Summer - Week 2</h2>
+                    <p class="cards__top-address">University of Netherlands Antilles</p>
+                    <p class="cards__bottom-address">Sta Maria Willeamstad, Curaçao, AN5999, Netherlands</p>
+                    <p class="cards__desc">Practical Self-Service BI with PowerPivot for Excel SQL Server MVP and Business Intelligence Architect Bill Pearson leads this full-day, hands-on introduction to using PowerPivot for</p>
+                </div>
+                <div class="cards__footer footer-cards">
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/man2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">55<span>%</span></p>
+                            <p class="footer-cards__gender">male</p>
+                        </div>
+                   </div>
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/woman2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">45<span>%</span></p>
+                            <p class="footer-cards__gender">female</p>
+                        </div>
+                   </div>
+                    
+                </div>
+            </article>
+            
+            <article class="cards__item">
+                <div class="cards__header">
+                    <div class="cards__pic">
+                        <img src="images/card5.png" alt="">
+                             
+                    </div>
+                    <div class="cards__row">
+                        <div class="cards__row-cont">
+                            <div class="cards__social">
+                               <img src="images/facebook.png" alt="">
+                            </div>
+                            <p class="cards__date">Aug 17, 2013  02:00pm - 08:00pm IST</p>
+                            <div class="cards__like">
+
+                            <svg class="cards__heart" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 37 33" style="enable-background:new 0 0 37 33;" xml:space="preserve">
+                            <g>
+                            <path class="st0" d="M18.5,28.9c-0.3,0-0.6-0.1-0.8-0.3C5.8,21.7,5.3,15,5.3,13.5c0,0,0,0,0-0.1c0-4.2,3.4-7.6,7.7-7.6
+                                c2.1,0,4.1,0.8,5.5,2.3c1.4-1.5,3.4-2.3,5.5-2.3c4.2,0,7.6,3.4,7.7,7.6c0,1-0.1,8.1-12.3,15.2c-0.1,0.1-0.2,0.1-0.4,0.2
+                                c0,0,0,0,0,0C18.8,28.9,18.6,28.9,18.5,28.9z" fill="#fe2232"/>
+                            <path d="M24,7.4c3.4,0,6.2,2.7,6.2,6.1c0,0,0.7,6.8-11.7,13.9l0,0c0,0,0,0,0,0c0,0,0,0,0,0v0C6.8,20.6,6.8,14.2,6.8,13.5
+                                c0,0,0,0,0-0.1c0-3.4,2.8-6.1,6.2-6.1c2.4,0,4.5,1.4,5.5,3.4C19.5,8.7,21.6,7.4,24,7.4 M24,4.4c-2,0-3.9,0.7-5.5,1.8
+                                C16.9,5,15,4.4,13,4.4c-5.1,0-9.2,4.1-9.2,9.1c0,0,0,0.1,0,0.1c0,1.8,0.7,9.2,13.1,16.4c0,0,0,0,0,0c0.3,0.2,0.6,0.3,1,0.4
+                                c0.2,0,0.4,0.1,0.6,0.1c0.3,0,0.5,0,0.8-0.1c0.3-0.1,0.6-0.2,0.8-0.4c12.8-7.4,13.1-15,13-16.5C33.1,8.4,29,4.4,24,4.4L24,4.4z" fill="#454237"/>
+                            </g>    
+                            </svg>   
+                            </div>
+                        </div>
+                    </div>     
+                       
+                </div>
+                <div class="cards__body">
+                    <h2 class="cards__title">Training EN - OpenERP 7.0  Functional Training</h2>
+                    <p class="cards__top-address">Boulevard Barcelona</p>
+                    <p class="cards__bottom-address">La Rambla 27, Barcelona, 08002, Spain</p>
+                    <p class="cards__desc">THE BOILER ROOM is coming to BCN The Boiler Room, un nuevo concepto de fiesta que aterriza en Barcelona, una noche fresca y muy energética con una programación de Dj's de</p>
+                </div>
+                <div class="cards__footer footer-cards">
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/man2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">31<span>%</span></p>
+                            <p class="footer-cards__gender">male</p>
+                        </div>
+                   </div>
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/woman2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">69<span>%</span></p>
+                            <p class="footer-cards__gender">female</p>
+                        </div>
+                   </div>
+                    
+                </div>
+            </article>
+            
+            
+            <article class="cards__item">
+                <div class="cards__header">
+                    <div class="cards__pic">
+                        <img src="images/card6.png" alt="">
+                             
+                    </div>
+                    <div class="cards__row">
+                        <div class="cards__row-cont">
+                            <div class="cards__social">
+                               <img src="images/socE.png" alt="">
+                            </div>
+                            <p class="cards__date">Aug 17, 2013  02:00pm - 08:00pm IST</p>
+                            <div class="cards__like">
+
+                            <svg class="cards__heart" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 37 33" style="enable-background:new 0 0 37 33;" xml:space="preserve">
+                            <g>
+                            <path class="st0" d="M18.5,28.9c-0.3,0-0.6-0.1-0.8-0.3C5.8,21.7,5.3,15,5.3,13.5c0,0,0,0,0-0.1c0-4.2,3.4-7.6,7.7-7.6
+                                c2.1,0,4.1,0.8,5.5,2.3c1.4-1.5,3.4-2.3,5.5-2.3c4.2,0,7.6,3.4,7.7,7.6c0,1-0.1,8.1-12.3,15.2c-0.1,0.1-0.2,0.1-0.4,0.2
+                                c0,0,0,0,0,0C18.8,28.9,18.6,28.9,18.5,28.9z" fill="#fe2232"/>
+                            <path d="M24,7.4c3.4,0,6.2,2.7,6.2,6.1c0,0,0.7,6.8-11.7,13.9l0,0c0,0,0,0,0,0c0,0,0,0,0,0v0C6.8,20.6,6.8,14.2,6.8,13.5
+                                c0,0,0,0,0-0.1c0-3.4,2.8-6.1,6.2-6.1c2.4,0,4.5,1.4,5.5,3.4C19.5,8.7,21.6,7.4,24,7.4 M24,4.4c-2,0-3.9,0.7-5.5,1.8
+                                C16.9,5,15,4.4,13,4.4c-5.1,0-9.2,4.1-9.2,9.1c0,0,0,0.1,0,0.1c0,1.8,0.7,9.2,13.1,16.4c0,0,0,0,0,0c0.3,0.2,0.6,0.3,1,0.4
+                                c0.2,0,0.4,0.1,0.6,0.1c0.3,0,0.5,0,0.8-0.1c0.3-0.1,0.6-0.2,0.8-0.4c12.8-7.4,13.1-15,13-16.5C33.1,8.4,29,4.4,24,4.4L24,4.4z" fill="#454237"/>
+                            </g>    
+                            </svg>   
+                            </div>
+                        </div>
+                    </div>     
+                       
+                </div>
+                <div class="cards__body">
+                    <h2 class="cards__title">Band Workshop with Artists  in Residence Super Tenants</h2>
+                    <p class="cards__top-address">Culture Club Revelin</p>
+                    <p class="cards__bottom-address">Sv. Dominika 3, Dubrovnik, 20 000, Croatia</p>
+                    <p class="cards__desc">Culture Club Revelin predstavio je novi ljetni program ''DREAMGIRLS IN REVELIN'' U bogatom cjelovečernjem programu moći ćete uživati u vrućim plesnim točkama zgodnih</p>
+                </div>
+                <div class="cards__footer footer-cards">
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/man2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">57<span>%</span></p>
+                            <p class="footer-cards__gender">male</p>
+                        </div>
+                   </div>
+                   <div class="footer-cards__item">
+                        <div class="footer-cards__icon">
+                            <img src="images/woman2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="footer-cards__percent">43<span>%</span></p>
+                            <p class="footer-cards__gender">female</p>
+                        </div>
+                   </div>
+                    
+                </div>
+            </article>    
+-->
+        </div>
+        <div class="btn-load__cont">
+<!--            <button class="btn__load">Load More</button>-->
+        </div>
+        </div>
+        </section>
+        
+        <footer class="footer">
+        <div class="container">
+           <nav class="footer__menu">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-active">Home</li>
+                  <li><a href="#">About&nbsp;eco</a></li>
+                  <li><a href="#">How&nbsp;it&nbsp;works</a></li>
+                  <li><a href="#">Industries</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Faq's</a></li>
+                  <li><a href="#">Privacy&nbsp;policy</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Terms&nbsp;of&nbsp;service</a></li>
+                </ul>  
+           </nav>
+           <div class="footer__bottom">
+               <div class="footer__copyright">© 2013 <span>steam.</span> All Rights Reserved. Design by <span>woof.</span></div>
+               <div class="footer__socialis">                  
+                    <i class="fa fa-facebook footer__icon" aria-hidden="true"></i>
+                    <i class="fa fa-tumblr footer__icon" aria-hidden="true"></i>
+                    <span class="icon-linkedin footer__icon"></span>
+                    <i class="fa fa-play footer__icon" aria-hidden="true"></i>
+                    <span class="icon-dots footer__icon"></span>
+                    <i class="fa fa-rss footer__icon" aria-hidden="true"></i>
+               </div>
+           </div>
+        </div>    
+        </footer>
+    
+    </body>  
+    
+</html>
