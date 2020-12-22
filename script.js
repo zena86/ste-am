@@ -131,9 +131,6 @@ dataOrderList[8] = {
     female: 87
     };
 
-
-
-
 dataOrderList[9] = {
     id: 9,
     picture: "images/card3.png",
@@ -247,7 +244,6 @@ $(document).ready(function() {
 
     });
    
-    
     myMap();
     loadMore(0, true);
 });
@@ -474,9 +470,7 @@ for (let i=0; i<dataOrderList.length; i++) {
         });  
 
 } 
-    
-    
-    
+     
     //Кастомные кнопки зума
 
     $(".map__zoom-btn_plus").click(function(event) {
@@ -533,22 +527,8 @@ google.maps.event.addListener(centerMarker, "drag", function(event){
     dragMarker.setPosition(dragMarkerCoord); 
     eventCircle.setCenter(event.latLng);
 });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
 }
-
-
-
 
 function getCardHtml(cardObject){
     let cardHtml="";
@@ -633,6 +613,5 @@ function loadMore(page, isHotEvent){
         btnObject.html(btnHtml);
     }else{
         btnObject.html("");
-    }
-    
+    }   
 }
