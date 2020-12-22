@@ -16,12 +16,12 @@ CSS3/SCSS|            |              |Font Awesome               |Adobe Photosho
 Для компиляции SCSS (переменные, миксины, вложенность, палитра цветов и размеры шрифтов) использовалось приложение Koala v2.3.0.
 
 
-**1. Google Maps (Maps JS API):
+**1. Google Maps (Maps JS API):**
 * Style Reference
 * Controls
 * Custom Markers
 * Info Windows
-* User-editable and draggable shapes (в т.ч. кастомизация)**
+* User-editable and draggable shapes (в т.ч. кастомизация)
 
 ![Screenshort 1](/images/imgreadme/screen-main.png)
 
