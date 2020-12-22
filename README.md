@@ -30,7 +30,7 @@ CSS3/SCSS|            |              |Font Awesome               |Adobe Photosho
 ![Screenshort 1](/images/imgreadme/screen-menu1.png)|![Screenshort 1](/images/imgreadme/screen-menu2.png)
 ----------------------------------------------------|----------------------------------------------------
 
-**3. Календарь (Air Datepicker), строки поиска**
+**3. Сортировка данных, календарь (Air Datepicker), строки поиска**
 
 ![Screenshort 1](/images/imgreadme/screen-search.png)
 
